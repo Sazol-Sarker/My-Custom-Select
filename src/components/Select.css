@@ -1,0 +1,193 @@
+/* Container Styles */
+.select-container {
+  width: 400px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center everything horizontally */
+  align-items: center; /*Center everything vertically */
+ 
+} 
+
+.select-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Header Styles */
+.select-header {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.select-placeholder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.placeholder-text {
+  color: #888;
+}
+
+.selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+.select-option.no-options {
+  color: #888;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.remove-btn {
+  margin-left: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #888;
+}
+
+.remove-btn:hover {
+  color: #333;
+}
+
+.select-arrow {
+  font-size: 12px;
+}
+
+/* Dropdown Styles */
+.select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: scroll; /* **Changed to 'scroll' to enable vertical scrolling** */
+  overflow-x: hidden; /* **No horizontal scroll** */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* **Corrected typo here. The correct pseudo-element is '::-webkit-scrollbar'** */
+.select-dropdown::-webkit-scrollbar {
+  display: none; /* **Hide scrollbar in Webkit browsers (Chrome, Safari, Edge)** */
+}
+
+/* Hide scrollbar in Firefox */
+.select-dropdown {
+  scrollbar-width: none; /* **Hide scrollbar in Firefox** */
+}
+
+.select-search {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.select-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.select-option:hover {
+  background-color: #f0f0f0;
+}
+
+/* toggle */
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
